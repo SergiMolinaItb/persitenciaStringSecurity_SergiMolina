@@ -1,0 +1,26 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Afegir/Editar Empleat</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/signin.css" rel="stylesheet">
+    <script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container jumbotron" align="center">
+    <form class="input-group" method="post" action="#" th:action="${'/register/submit'}" th:object="${registerForm}">
+        <h1>Nou usuari</h1>
+        <label>Username </label><br/><input type="text" id="username" placeholder="Username" th:field="*{username}"><br/>
+        <label>Password </label><br/><input type="password" id="password" placeholder="Password" th:field="*{password}"><br/>
+        <button class="btn-default" type="submit">Enviar</button>
+    </form>
+    <div class="container jumbotron" style="text-align: -webkit-center">
+        <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sortir (Sign Out)"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>
