@@ -1,0 +1,29 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Afegir/Editar Empleat</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/signin.css" rel="stylesheet">
+    <script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container jumbotron" align="center">
+    <form class="input-group" method="post" action="#" th:action="${empleatForm.id!=0} ?@{/empleats/edit/submit} : @{/empleats/new/submit}" th:object="${empleatForm}">
+        <h1 th:text="${empleatForm.id!=0}?'Editar empleat': 'Nou empleat'">bla bla empleat</h1>
+        <label>ID </label><br/><input type="text" id="id" placeholder="1" th:field="*{id}" th:attrappend="readonly=${empleatForm.id!=0}?'readonly':null"><br/>
+        <label>Nom </label><br/><input type="text" id="nom" placeholder="Nom" th:field="*{nom}"><br/>
+        <label>Email </label><br/><input type="text" id="email" placeholder="a@a.com" th:field="*{email}"><br/>
+        <label>Telèfon </label><br/><input type="text" id="telefon" placeholder="93123456" th:field="*{telefon}"><br/>
+        <label>Es directiu? </label><input type="checkbox" id="directiu" th:field="*{directiu}"><br/>
+        <button class="btn-default" type="submit">Enviar</button>
+    </form>
+    <div class="container jumbotron" style="text-align: -webkit-center">
+        <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sortir (Sign Out)"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

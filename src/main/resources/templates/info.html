@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inici Aplicació</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/signin.css" rel="stylesheet">
+    <script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container jumbotron">
+    <div>
+        <ul class="list-group list-inline" style="text-align: center">
+            <li class="list-group-item" style="padding: 2%"><a href="/empleats/new">Afegir empleats</a><br/></li>
+            <li class="list-group-item" style="padding: 2%"><a href="/empleats/list">Llistar empleats </a><br/></li>
+            <li class="list-group-item" style="padding: 2%"><a href="/empleats/listPerName">Llistar empleats ordenats per nom</a><br/></li>
+        </ul>
+    </div>
+    <div style="text-align: -webkit-center">
+        <form th:action="@{/logout}" method="post" class="form-inline input-group">
+            <div style="align:center"><input type="submit" class="btn-default" value="Sortir (Sign Out)"/></div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
